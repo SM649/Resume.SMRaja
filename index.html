@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #222; /* Dark gray */
+        }
+
+        .navbar a {
+            color: #fff; /* White */
+            margin-right: 25px;
+        }
+
+        .navbar a:hover {
+            background-color: #444; /* Slightly darker gray */
+            border-radius: 10px;
+        } 
+
+        .navbar-nav .nav-item:last-child a {
+            margin-right: 0;
+        }
+
+        .jumbotron {
+            background-color: #F5F5F5;
+            padding: 150px 0;
+            margin-bottom: 0;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .section.home:before {
+            background-image: url('path-to-home-image.jpg');
+        }
+
+        .section.about:before {
+            background-image: url('path-to-about-image.jpg');
+        }
+
+        .section.services:before {
+            background-image: url('path-to-services-image.jpg');
+        }
+
+        .section-container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .card {
+            background-color: #E9E9E9;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 350px; /* Increased height */
+            width: 100%; /* Full width */
+            margin: 20px auto; /* Increased space and centered */
+            padding: 20px; /* Added padding */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar {
+                background-color: #333;
+            }
+
+            .navbar a {
+                color: #fff;
+            }
+
+            .jumbotron {
+                padding: 100px 0;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .footer {
+                background-color: #333;
+            }
+
+            .section-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <script>
+       $(document).ready(function () {
+        $(".nav-link").on("click", function () {
+            $(".nav-link").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        // Parallel Typing Animation
+        const typedTexts = [
+            "Welcome to My Resume",
+            "I am a Web Developer and Software Engineer."
+        ];
+
+        let currentText = "";
+        let currentIndex = 0;
+        let typingSpeed = 100;
+
+        function typeText() {
+            if (currentText.length < typedTexts[currentIndex].length) {
+                currentText += typedTexts[currentIndex][currentText.length];
+                $(".typing").eq(currentIndex).text(currentText);
+            } else if (currentIndex === 0) {
+                currentIndex = 1;
+                currentText = "";
+                $(".typing").eq(1).show(); // Show the second line
+            }
+
+            setTimeout(typeText, typingSpeed);
+        }
+
+        typeText();
+    });
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">S M Raja</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Me</a> <!-- Added Contact Us link -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CV.html">View CV</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="jumbotron text-center section">
+        <h1 class="display-4 typing">Welcome to My Resume</h1>
+        <p class="lead typing">I am a Web Developer and Software Engineer.</p>
+    </div>
+    
+
+    <!-- About Section -->
+    <div id="about" class="section section-container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <h2 class="text-center mb-4">About Me</h2>
+                <p class="text-muted text-center">I'm a passionate web developer dedicated to crafting engaging and innovative digital experiences. With a blend of creative thinking and technical expertise, I bring ideas to life by building responsive and user-friendly websites. From designing elegant user interfaces to implementing robust backend functionality, I'm committed to delivering seamless web solutions that resonate with both users and clients. My journey in the digital realm is fueled by continuous learning and a drive to create impactful online platforms that leave a lasting impression.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section with Carousel -->
+    <div id="services" class="section section-container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <h2 class="text-center mb-4">Services</h2>
+                <div id="servicesCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card p-4">
+                                <h5 class="card-title">Website Development</h5>
+                                <p class="card-text">As a passionate web developer, I thrive on crafting digital experiences that seamlessly blend creativity and functionality. With a solid foundation in front-end and back-end technologies, I bring concepts to life through clean, efficient code and intuitive user interfaces.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card p-4">
+                                <h5 class="card-title">Frontend Design</h5>
+                                <p class="card-text">Proficient in HTML5, CSS3, and JavaScript, I create responsive and visually engaging websites that adapt seamlessly across devices. I'm well-versed in modern frameworks like React and Vue.js, allowing me to build interactive and dynamic user interfaces for frontends.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card p-4">
+                                <h5 class="card-title">Responsive Layouts</h5>
+                                <p class="card-text">Creating seamless and adaptable user experiences across a range of devices is my forte. I specialize in designing and developing responsive layouts that ensure websites look and function flawlessly on desktops, tablets, and smartphones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#servicesCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#servicesCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact" class="section section-container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">Contact Us</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card p-5">
+                            <h5 class="card-title">Email Address</h5>
+                            <p class="card-text">Click below to email me:</p>
+                            <a href="mailto:rajasalehkhan5810412@gmail.com" class="btn btn-primary">Email Me</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-5">
+                            <h5 class="card-title">Facebook Profile</h5>
+                            <p class="card-text">Connect with me on Facebook:</p>
+                            <a href="https://www.facebook.com/sm.raja.5661?mibextid=ZbWKwL" class="btn btn-primary">Facebook Profile</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-5">
+                            <h5 class="card-title">LinkedIn Profile</h5>
+                            <p class="card-text">Connect with me on LinkedIn:</p>
+                            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" class="btn btn-primary">LinkedIn Profile </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 S M Raja. All rights reserved.</p>
+    </div>
+
+
+</body>
+
+</html>

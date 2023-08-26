@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saleh Muhammad - Resume</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .container {
+    padding: 20px;
+   
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px lightslategrey;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    text-align: center;
+  }
+  .dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+  }
+  .light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  .dark-theme h1, .dark-theme h2, .dark-theme h3 {
+    color: #00bfff;
+  }
+  .light-theme h1, .light-theme h2, .light-theme h3 {
+    color: darkblue;
+  }
+  h1 , h2 , h3 {
+      color: darkblue;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  .profile-image {
+    max-width: 150px;
+    border-radius: 50%;
+    border: 4px solid black;
+    box-shadow: 0px 0px 10px lightslategrey;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .theme-button {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<button class="theme-button btn btn-outline-info btn-sm" id="themeButton">Dark</button>
+<div class="container mt-5">
+  <img src="0 (23).jpg" alt="Profile Picture" class="profile-image">
+  <h1>Saleh Muhammad</h1>
+  <p>Address: Village Nata P/O Dautala, Tehsil Gujarkhan, Distt Rawalpindi</p>
+  <p>Cell No: 03185557649</p>
+  <p>Email: rajasalehkhan5810412@gmail.com</p>
+  
+  <h2><i class="fas fa-info-circle"></i> Personal Info</h2>
+  <p>Name: Saleh Muhammad</p>
+  <p>Father Name: Zafar Iqbal</p>
+  <p>DOB: 9 FEB 2004</p>
+  <p>Age: 17.5 years</p>
+  <p>CNIC No: 37401-64611877-7</p>
+  <p>Domicile: Punjab (Rawalpindi)</p>
+  <p>Religion: Islam</p>
+  
+  <h2><i class="fas fa-user-tie"></i> Profile</h2>
+  <p>To work with an organization that believes in creativity, talent, and good professional skills. I am looking to explore my true potential by integrating my practical and academic knowledge with a dynamic professional environment for the benefit of an organization and myself also.</p>
+  
+  <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+  <p>SSC (2019)</p>
+  <p>Obtained Secondary School Certificate from BISE Rawalpindi by securing 798/1100 marks.</p>
+  <p>Institute: Wisdom School Daultala</p>
+  <p>Major subjects: Comp, Math, Phy, Chy</p>
+  
+  <p>Intermediation (2021)</p>
+  <p>Obtained Higher Secondary Certificate from BISE Rawalpindi by securing 886/1100 marks.</p>
+  <p>Institute: Government Collage Daultala</p>
+  <p>Major subjects: Comp, Math, Phy</p>
+  
+  <h2><i class="fas fa-cogs"></i> Skills</h2>
+  <p>Communication: I have quite good communication and management skills. I work leading or being part of a team. I am self-motivated.</p>
+  <p>Languages: Urdu, Punjabi</p>
+  <p>Computer Skills: Sound Knowledge of Word and Excel. Knowledge of Operating System.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  const themeButton = document.getElementById('themeButton');
+  const body = document.body;
+  
+  themeButton.addEventListener('click', () => {
+    if (body.classList.contains('dark-theme')) {
+      body.classList.remove('dark-theme');
+      body.classList.add('light-theme');
+      themeButton.innerText = 'Dark';
+    } else {
+      body.classList.remove('light-theme');
+      body.classList.add('dark-theme');
+      themeButton.innerText = 'Light';
+    }
+  });
+</script>
+</body>
+</html>
